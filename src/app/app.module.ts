@@ -24,6 +24,8 @@ import { PrincipalComponent } from './principal/principal.component';
   providers: [
     appRoutingProviders
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
