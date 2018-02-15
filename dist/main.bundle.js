@@ -273,10 +273,6 @@ var AppContactos = (function () {
         this.verformulariocorreo = false;
     };
     AppContactos.prototype.enviaremail = function () {
-        console.log("Nombre : " + this.nombrecorreo);
-        console.log("Asunto : " + this.asuntocorreo);
-        console.log("Email : " + this.emailcorreo);
-        console.log("Mensaje : " + this.mensajecorreo);
         if (this.nombrecorreo == "", this.asuntocorreo == "", this.emailcorreo == "", this.mensajecorreo == "") {
             alert('Debe llenar todos los campos');
         }
@@ -284,7 +280,7 @@ var AppContactos = (function () {
             if (this.isValidEmail(this.emailcorreo)) {
                 $.ajax({
                     // la URL para la petición
-                    url: 'https://localhost:3000/funcionalidades/enviaremail',
+                    url: 'https://orcosystems.herokuapp.com/funcionalidades/enviaremail',
                     // la información a enviar
                     // (también es posible utilizar una cadena de datos)
                     data: {
@@ -308,6 +304,8 @@ var AppContactos = (function () {
                     // el objeto de la petición en crudo y código de estatus de la petición
                     error: function (xhr, status) {
                         alert('Disculpe, existió un problema');
+                        console.log(xhr);
+                        console.log(status);
                     },
                 });
             }
