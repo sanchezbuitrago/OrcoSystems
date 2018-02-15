@@ -1,5 +1,5 @@
 const express = require('express');
-const http = require('http');
+const https = require('http');
 const path = require('path');
 const nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');//permite leer la data de las peticiones
@@ -42,5 +42,5 @@ app.get('*', (req, res) => {
 
 app.set('port', process.env.PORT || '3000');
 
-const server = http.createServer(app);
+const server = https.createServer(app);
 server.listen(process.env.PORT || '3000', () => console.log('Running'));
