@@ -107,6 +107,13 @@ p {
   padding-right: 2rem;
 }
 
+.btn-xs {
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin: auto;
+  
+}
+
 .intro {
   position: relative;
 }
@@ -150,7 +157,6 @@ p {
 
 .cta .cta-inner:before {
   border-radius: 0.5rem;
-  content: '';
   position: absolute;
   top: -0.5rem;
   bottom: -0.5rem;
@@ -245,4 +251,12 @@ p {
 
 .font-weight-light {
   font-weight: 100 !important;
+}
+
+.divform{
+  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  color: antiquewhite;
 }

@@ -136,12 +136,13 @@ var AppComponent = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__servicios_servicios_component__ = __webpack_require__("../../../../../src/app/servicios/servicios.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__contactos_contactos_component__ = __webpack_require__("../../../../../src/app/contactos/contactos.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__404_404_component__ = __webpack_require__("../../../../../src/app/404/404.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__principal_principal_component__ = __webpack_require__("../../../../../src/app/principal/principal.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__servicios_servicios_component__ = __webpack_require__("../../../../../src/app/servicios/servicios.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__contactos_contactos_component__ = __webpack_require__("../../../../../src/app/contactos/contactos.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__404_404_component__ = __webpack_require__("../../../../../src/app/404/404.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__principal_principal_component__ = __webpack_require__("../../../../../src/app/principal/principal.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -156,27 +157,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_4__servicios_servicios_component__["a" /* AppServicios */],
-                __WEBPACK_IMPORTED_MODULE_5__contactos_contactos_component__["a" /* AppContactos */],
-                __WEBPACK_IMPORTED_MODULE_6__404_404_component__["a" /* App404 */],
-                __WEBPACK_IMPORTED_MODULE_7__principal_principal_component__["a" /* PrincipalComponent */]
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__servicios_servicios_component__["a" /* AppServicios */],
+                __WEBPACK_IMPORTED_MODULE_6__contactos_contactos_component__["a" /* AppContactos */],
+                __WEBPACK_IMPORTED_MODULE_7__404_404_component__["a" /* App404 */],
+                __WEBPACK_IMPORTED_MODULE_8__principal_principal_component__["a" /* PrincipalComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__app_routing__["b" /* routing */]
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_3__app_routing__["b" /* routing */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_2__app_routing__["a" /* appRoutingProviders */]
+                __WEBPACK_IMPORTED_MODULE_3__app_routing__["a" /* appRoutingProviders */],
             ],
             bootstrap: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]
             ]
         })
     ], AppModule);
@@ -237,7 +240,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/contactos/contactos.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"page-section cta\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-xl-9 mx-auto\">\n                <div class=\"cta-inner text-center rounded\">\n                    <h2 class=\"section-heading mb-5\">\n                        <span class=\"section-heading-upper\">Orco System's</span>\n                        <span class=\"section-heading-upper\">Contactos</span>\n                    </h2>\n                    <ul class=\"list-unstyled list-hours mb-5 text-left mx-auto\">\n                        <li class=\"list-unstyled-item list-hours-item d-flex\">\n                            Responsable\n                            <span class=\"ml-auto\">Orlando Cobos Castillo</span>\n                        </li>\n                        <li class=\"list-unstyled-item list-hours-item d-flex\">\n                            Celular\n                            <span class=\"ml-auto\">312 322 4562</span>\n                        </li>\n                        <li class=\"list-unstyled-item list-hours-item d-flex\">\n                            WhatsApp\n                            <span class=\"ml-auto\">+57 312 322 4562</span>\n                        </li>\n                        <li class=\"list-unstyled-item list-hours-item d-flex\">\n                            Email\n                            <span class=\"ml-auto\">orlando_coca@yahoo.es</span>\n                        </li>\n                    </ul>-\n                </div>\n            </div>\n        </div>\n    </div>\n</section>"
+module.exports = "<div *ngIf=\"verformulariocorreo == false\">\n    <section class=\"page-section cta\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-xl-9 mx-auto\">\n                    <div class=\"cta-inner text-center rounded\">\n                        <h2 class=\"section-heading mb-5\">\n                            <span class=\"section-heading-upper\">Orco System's</span>\n                            <span class=\"section-heading-upper\">Contactos</span>\n                        </h2>\n                        <ul class=\"list-unstyled list-hours mb-5 text-left mx-auto\">\n                            <li class=\"list-unstyled-item list-hours-item d-flex\">\n                                Responsable\n                                <span class=\"ml-auto\">Orlando Cobos Castillo</span>\n                            </li>\n                            <li class=\"list-unstyled-item list-hours-item d-flex\">\n                                Celular\n                                <span class=\"ml-auto\">312 322 4562</span>\n                            </li>\n                            <li class=\"list-unstyled-item list-hours-item d-flex\">\n                                WhatsApp\n                                <span class=\"ml-auto\">+57 312 322 4562</span>\n                            </li>\n                            <li class=\"list-unstyled-item list-hours-item d-flex\">\n                                Email\n                                <span class=\"ml-auto\">orlando_coca@yahoo.es</span>\n                            </li>\n                        </ul>-\n                        <div class=\"intro-button mx-auto\">\n                            <a class=\"btn btn-primary btn-xs\" (click)=\"mostrarformulariocorreo()\">Enviar Correo</a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</div>\n<div class=\"divform text-center\" *ngIf=\"verformulariocorreo == true\">\n\n    <div class=\"form-group row\">\n        <label for=\"example-text-input\" class=\"col-2 col-form-label\">Nombre</label>\n        <div class=\"col-10\">\n            <input class=\"form-control\" type=\"text\"  id=\"nombre\" [(ngModel)]=\"nombrecorreo\">\n        </div>\n    </div>\n    <div class=\"form-group row\">\n        <label for=\"example-search-input\" class=\"col-2 col-form-label\">Asunto</label>\n        <div class=\"col-10\">\n            <input class=\"form-control\" type=\"search\"  id=\"asunto\" [(ngModel)]=\"asuntocorreo\">\n        </div>\n    </div>\n    <div class=\"form-group row\">\n        <label for=\"example-email-input\" class=\"col-2 col-form-label\">Email</label>\n        <div class=\"col-10\">\n            <input class=\"form-control\" type=\"email\"  id=\"email\" [(ngModel)]=\"emailcorreo\">\n        </div>\n    </div>\n    <div class=\"form-group row\">\n        <label for=\"example-email-input\" class=\"col-2 col-form-label\">Mensaje</label>\n        <div class=\"col-10\">\n            <textarea class=\"form-control\" id=\"mesaje\" rows=\"3\" [(ngModel)]=\"mensajecorreo\"></textarea>\n        </div>\n    </div>\n\n    <div class=\"intro-button mx-auto\">\n        <a type=\"submit\" class=\"btn btn-primary btn-xs\" (click)=\"enviaremail()\">Enviar</a>\n        <a type=\"submit\" class=\"btn btn-primary btn-xs\" (click)=\"ocultarformulariocorreo()\">Cancelar</a>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -257,7 +260,66 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var AppContactos = (function () {
     function AppContactos() {
         this.title = 'App Contactos';
+        this.verformulariocorreo = false;
+        this.nombrecorreo = "";
+        this.asuntocorreo = "";
+        this.emailcorreo = "";
+        this.mensajecorreo = "";
     }
+    AppContactos.prototype.mostrarformulariocorreo = function () {
+        this.verformulariocorreo = true;
+    };
+    AppContactos.prototype.ocultarformulariocorreo = function () {
+        this.verformulariocorreo = false;
+    };
+    AppContactos.prototype.enviaremail = function () {
+        console.log("Nombre : " + this.nombrecorreo);
+        console.log("Asunto : " + this.asuntocorreo);
+        console.log("Email : " + this.emailcorreo);
+        console.log("Mensaje : " + this.mensajecorreo);
+        if (this.nombrecorreo == "", this.asuntocorreo == "", this.emailcorreo == "", this.mensajecorreo == "") {
+            alert('Debe llenar todos los campos');
+        }
+        else {
+            if (this.isValidEmail(this.emailcorreo)) {
+                $.ajax({
+                    // la URL para la petición
+                    url: 'http://localhost:3000/funcionalidades/enviaremail',
+                    // la información a enviar
+                    // (también es posible utilizar una cadena de datos)
+                    data: {
+                        nombrecorreo: this.nombrecorreo,
+                        asuntocorreo: this.asuntocorreo,
+                        emailcorreo: this.emailcorreo,
+                        mensajecorreo: this.mensajecorreo
+                    },
+                    // especifica si será una petición POST o GET
+                    type: 'POST',
+                    // el tipo de información que se espera de respuesta
+                    //dataType: '"application/json"',
+                    // código a ejecutar si la petición es satisfactoria;
+                    // la respuesta es pasada como argumento a la función
+                    success: function (json) {
+                        alert(json);
+                        console.log(json);
+                        window.location.href = '/';
+                    },
+                    // código a ejecutar si la petición falla;
+                    // son pasados como argumentos a la función
+                    // el objeto de la petición en crudo y código de estatus de la petición
+                    error: function (xhr, status) {
+                        alert('Disculpe, existió un problema');
+                    },
+                });
+            }
+            else {
+                alert('Correo no valido');
+            }
+        }
+    };
+    AppContactos.prototype.isValidEmail = function (mail) {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
+    };
     AppContactos = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-contactos',
@@ -420,7 +482,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
 

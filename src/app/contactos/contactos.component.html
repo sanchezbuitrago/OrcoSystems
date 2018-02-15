@@ -1,32 +1,69 @@
-<section class="page-section cta">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-9 mx-auto">
-                <div class="cta-inner text-center rounded">
-                    <h2 class="section-heading mb-5">
-                        <span class="section-heading-upper">Orco System's</span>
-                        <span class="section-heading-upper">Contactos</span>
-                    </h2>
-                    <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-                        <li class="list-unstyled-item list-hours-item d-flex">
-                            Responsable
-                            <span class="ml-auto">Orlando Cobos Castillo</span>
-                        </li>
-                        <li class="list-unstyled-item list-hours-item d-flex">
-                            Celular
-                            <span class="ml-auto">312 322 4562</span>
-                        </li>
-                        <li class="list-unstyled-item list-hours-item d-flex">
-                            WhatsApp
-                            <span class="ml-auto">+57 312 322 4562</span>
-                        </li>
-                        <li class="list-unstyled-item list-hours-item d-flex">
-                            Email
-                            <span class="ml-auto">orlando_coca@yahoo.es</span>
-                        </li>
-                    </ul>-
+<div *ngIf="verformulariocorreo == false">
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner text-center rounded">
+                        <h2 class="section-heading mb-5">
+                            <span class="section-heading-upper">Orco System's</span>
+                            <span class="section-heading-upper">Contactos</span>
+                        </h2>
+                        <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Responsable
+                                <span class="ml-auto">Orlando Cobos Castillo</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Celular
+                                <span class="ml-auto">312 322 4562</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                WhatsApp
+                                <span class="ml-auto">+57 312 322 4562</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Email
+                                <span class="ml-auto">orlando_coca@yahoo.es</span>
+                            </li>
+                        </ul>-
+                        <div class="intro-button mx-auto">
+                            <a class="btn btn-primary btn-xs" (click)="mostrarformulariocorreo()">Enviar Correo</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+</div>
+<div class="divform text-center" *ngIf="verformulariocorreo == true">
+
+    <div class="form-group row">
+        <label for="example-text-input" class="col-2 col-form-label">Nombre</label>
+        <div class="col-10">
+            <input class="form-control" type="text"  id="nombre" [(ngModel)]="nombrecorreo">
+        </div>
     </div>
-</section>
+    <div class="form-group row">
+        <label for="example-search-input" class="col-2 col-form-label">Asunto</label>
+        <div class="col-10">
+            <input class="form-control" type="search"  id="asunto" [(ngModel)]="asuntocorreo">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-email-input" class="col-2 col-form-label">Email</label>
+        <div class="col-10">
+            <input class="form-control" type="email"  id="email" [(ngModel)]="emailcorreo">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="example-email-input" class="col-2 col-form-label">Mensaje</label>
+        <div class="col-10">
+            <textarea class="form-control" id="mesaje" rows="3" [(ngModel)]="mensajecorreo"></textarea>
+        </div>
+    </div>
+
+    <div class="intro-button mx-auto">
+        <a type="submit" class="btn btn-primary btn-xs" (click)="enviaremail()">Enviar</a>
+        <a type="submit" class="btn btn-primary btn-xs" (click)="ocultarformulariocorreo()">Cancelar</a>
+    </div>
+</div>
