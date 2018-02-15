@@ -13,6 +13,7 @@ app.use(bodyParser.json());//permite leer la data de las peticiones
 app.use(bodyParser.urlencoded({extended: false}));//permite leer la data de las peticiones
 
 app.post('/funcionalidades/enviaremail', (req, res) => {
+    console.log("::::::::::::::::::::::::::::::");
     var smtpTransport = nodemailer.createTransport({
         service:'Gmail',
         auth:{
