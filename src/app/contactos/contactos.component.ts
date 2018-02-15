@@ -27,11 +27,6 @@ export class AppContactos {
     }
 
     enviaremail() {
-        console.log("Nombre : " + this.nombrecorreo);
-        console.log("Asunto : " + this.asuntocorreo);
-        console.log("Email : " + this.emailcorreo);
-        console.log("Mensaje : " + this.mensajecorreo);
-
         if (this.nombrecorreo == "", this.asuntocorreo == "", this.emailcorreo == "", this.mensajecorreo == "") {
             alert('Debe llenar todos los campos');
 

@@ -12,6 +12,10 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use(bodyParser.json());//permite leer la data de las peticiones
 app.use(bodyParser.urlencoded({extended: false}));//permite leer la data de las peticiones
 
+app.get('/prueba', (req,res) => {
+    res.send('Pasa a prueba');
+});
+
 app.post('/funcionalidades/enviaremail', (req, res) => {
     console.log("::::::::::::::::::::::::::::::");
     var smtpTransport = nodemailer.createTransport({
