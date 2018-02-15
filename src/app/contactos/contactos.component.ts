@@ -63,6 +63,8 @@ export class AppContactos {
                     // el objeto de la petición en crudo y código de estatus de la petición
                     error: function (xhr, status) {
                         alert('Disculpe, existió un problema');
+                        console.log(xhr);
+                        console.log(status);
                     },
                 });
             } else {
