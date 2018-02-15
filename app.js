@@ -27,9 +27,9 @@ app.post('/funcionalidades/enviaremail', (req, res) => {
     });
     var mailOptions={
         from:req.body.nombrecorreo,
-        to:'orcosystemsapp@gmail.com',
+        to:'orlando_coca@yahoo.es',
         subject:req.body.asuntocorreo,
-        html:"<h1>El correo fuen enviado por : "+req.body.nombrecorreo+"</h1><p>"+req.body.mensajecorreo+"</p><br><h2>Puede responder a : "+req.body.emailcorreo+"</h2>"
+        html:"<h2>Correo enviado desde la pagina de Orco System's</h2><p>Nombre del cliente : "+req.body.nombrecorreo+"</p><p>Contenido del correo : </p><p>"+req.body.mensajecorreo+"</p><br><p>Email del cliente : "+req.body.emailcorreo+"</p>"
     };
 
     smtpTransport.sendMail(mailOptions, function(error,respuesta){

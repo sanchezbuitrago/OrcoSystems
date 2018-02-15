@@ -35,7 +35,7 @@ export class AppContactos {
                 $.ajax({
                     // la URL para la petición
                     url: 'https://orcosystems.herokuapp.com/funcionalidades/enviaremail',
-
+                    
                     // la información a enviar
                     // (también es posible utilizar una cadena de datos)
                     data: {
@@ -55,7 +55,8 @@ export class AppContactos {
                     // la respuesta es pasada como argumento a la función
                     success: function (json) {
                         alert(json);
-                        window.location.href='/';
+                        history.back();
+
                     },
 
                     // código a ejecutar si la petición falla;

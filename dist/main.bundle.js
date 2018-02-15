@@ -297,7 +297,7 @@ var AppContactos = (function () {
                     // la respuesta es pasada como argumento a la función
                     success: function (json) {
                         alert(json);
-                        window.location.href = '/';
+                        history.back();
                     },
                     // código a ejecutar si la petición falla;
                     // son pasados como argumentos a la función
