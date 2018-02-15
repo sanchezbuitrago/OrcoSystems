@@ -284,7 +284,7 @@ var AppContactos = (function () {
             if (this.isValidEmail(this.emailcorreo)) {
                 $.ajax({
                     // la URL para la petición
-                    url: 'http://localhost:3000/funcionalidades/enviaremail',
+                    url: 'https://localhost:3000/funcionalidades/enviaremail',
                     // la información a enviar
                     // (también es posible utilizar una cadena de datos)
                     data: {
@@ -301,7 +301,6 @@ var AppContactos = (function () {
                     // la respuesta es pasada como argumento a la función
                     success: function (json) {
                         alert(json);
-                        console.log(json);
                         window.location.href = '/';
                     },
                     // código a ejecutar si la petición falla;
