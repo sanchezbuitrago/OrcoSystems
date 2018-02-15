@@ -39,7 +39,7 @@ export class AppContactos {
             if (this.isValidEmail(this.emailcorreo)) {
                 $.ajax({
                     // la URL para la petición
-                    url: 'https://localhost:3000/funcionalidades/enviaremail',
+                    url: 'https://orcosystems.herokuapp.com/funcionalidades/enviaremail',
 
                     // la información a enviar
                     // (también es posible utilizar una cadena de datos)
